@@ -19,8 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 # site overview stuff
-title: "4 Semesterarbeit Dennis Buathong"
-email: "dennis.buathong@edu.tbz.ch"
+title: 4 Semesterarbeit Dennis Buathong
+email: dennis.buathong@edu.tbz.ch
 description: >- # this means to ignore newlines until another declaration
   "Dies ist die 4. Semesterarbeit von Dennis Buathong"
 
