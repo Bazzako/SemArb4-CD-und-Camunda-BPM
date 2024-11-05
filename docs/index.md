@@ -7,7 +7,7 @@ permalink: /
 
 # Willkommen!
 
-Hier findest du die Dokumentation der 4. Semester Arbeit über BPM von Dennis Buathong.
+Hier findest du die Dokumentation der 4. Semester Arbeit Orchestrierung eines Geschäftsprozesses mit Kubernetes, CI/CD und Camunda BPM
 
 In dieser Semesterarbeit wurde ein bestehender Prozess der Firma ISEAG erneuert und verbessert. Dazu wurden verschiedene Tools eingesetzt. Um die Qualitätsverbesserung durchführen zu können, wurde mit dem Qualitätsmanagement *Lean Six Sigma* gearbeitet.
 
