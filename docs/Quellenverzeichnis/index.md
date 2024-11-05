@@ -9,17 +9,17 @@ nav_order: 6
 
 Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen der genutzten Informationen.
 
-![Luppe](../../ressources/bilder/rsz_loupe_2.png)
+![Luppe](../ressources/bilder/loupe.png){: width="250px" }
 
 [Quelle](#quellenverzeichnis-logo)
 
 # Bilder
 
 ## Startseite
-[Flaticon](https://www.flaticon.com/free-icon/welcome_4245497?term=welcome&related_id=4245497)
+[Flaticon](https://www.flaticon.com/free-icon/welcome-back_5229354?term=welcome&related_id=5229354)
 
 ## Einleitung
-[Flaticon](https://www.flaticon.com/free-icon/idea_2436837?term=idea&page=1&position=37&origin=search&related_id=2436837)
+[Flaticon](https://www.flaticon.com/free-icon/presentation_3534078?term=introduction&related_id=3534078)
 
 ## About
 [Flaticon](https://www.flaticon.com/free-icon/implementation_5656091?term=process&page=2&position=3&origin=search&related_id=5656091)
@@ -61,7 +61,7 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Flaticon](https://www.flaticon.com/free-icon/process_4149678?term=control&related_id=4149678)
 
 ## Quellenverzeichnis-Logo
-[Flaticon](https://www.flaticon.com/free-icon/loupe_428094?term=magnifying+glass&page=1&position=9&origin=search&related_id=428094)
+[Flaticon](https://www.flaticon.com/free-icon/loupe_751381?term=loupe&related_id=751381)
 
 ## Abschluss
 [Flaticon](https://www.flaticon.com/free-icon/check_11510892?term=check&page=1&position=93&origin=search&related_id=11510892)
