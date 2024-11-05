@@ -30,14 +30,15 @@ github_username:  "Bazzako"
 
 # external stuff
 aux_links:
-  Projektplanung: 
+  Projektplanung: https://github.com/users/Bazzako/projects/6/views/2
+  Git Repo: https://github.com/Bazzako/SemArb4-CD-und-Camunda-BPM
 aux_links_new_tab: true
 
 
 # technical site stuff
 url: "https://bazzako.github.io/SemArb4-CD-und-Camunda-BPM"
 logo: "docs/ressources/bilder/ise_ag_team_db.jpg"
-favicon_ico: "ressources/bilder/dennis.jpg"
+favicon_ico: "docs/ressources/bilder/ise_ag_team_db.jpg"
 remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
