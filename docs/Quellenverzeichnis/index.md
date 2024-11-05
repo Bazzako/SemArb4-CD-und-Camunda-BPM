@@ -22,7 +22,7 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Flaticon](https://www.flaticon.com/free-icon/presentation_3534078?term=introduction&related_id=3534078)
 
 ## About
-[Flaticon](https://www.flaticon.com/free-icon/implementation_5656091?term=process&page=2&position=3&origin=search&related_id=5656091)
+[Flaticon](https://www.flaticon.com/free-icon/idea_1253804?term=idea&page=1&position=11&origin=search&related_id=1253804)
 
 ## Goals
 [Flaticon](https://www.flaticon.com/free-icon/goal_1534999?term=goals&related_id=1534999)
