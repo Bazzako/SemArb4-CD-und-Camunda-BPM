@@ -16,6 +16,6 @@ Sie wird durch meine Einträge im Gitrepo stetig aktualisiert und erneuert. Test
 
 Ich wünsche dir viel Spass beim Lesen!
 
-![Welcome](../ressources/bilder/rsz_welcome.png)
+![Welcome](/docs/ressources/bilder/welcome-back.png){: width="250px" }
 
-[Quelle](./Quellenverzeichnis/index.md#startseite)
+[Quelle](/docs/Quellenverzeichnis/index.md#startseite)
