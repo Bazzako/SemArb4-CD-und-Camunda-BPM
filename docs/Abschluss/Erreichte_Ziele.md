@@ -14,19 +14,18 @@ nav_order: 3
 
 Um zu rekapitulieren, welche Ziele zu erreichen waren, werde ich diese hier nochmals auflisten.
 
-1. Aktualisierung und Visualisierung bestehender Reparaturprozess (von der ISEAG)  
-1. Camunda in einer Container-Instanz in Azure betreiben  
-2. BPMN fehlerfrei erstellen  
-3. Formulare im Camunda erstellen  
-4. Weboberfläche für die Ausgabe der Variablenwert  
-5. Dokumentation über eine CI/CD Pipeline auf Github Pages hosten
+1.	*Erstellen eines Docker-Images, für das Deployment auf Kubernetes:*
 
-Alle diese Ziele konnten während der Semesterarbeit erreicht und dokumentiert werden.
+    o	Erstellen eines Docker-Images, welches die Camunda-Engine und die BPMN-Dateien enthält.
+2.	*Automatisierte CI/CD-Pipeline einrichten:*
+
+    o	Implementierung einer CI/CD Pipepline in Github, die automatischen Änderungen am BPMN-Prozess überprüft und in    den Kubernetes Cluster deployt
+3.	*Automatisierte Unit-Tests in der Pipeline*
+
+    o	Änderungen des BPMN-Prozesses sollen erst nach erfolgreichen Unit-Tests auf den Kubernetes Cluster deployt werden.
+4.	*Zugriff auf das UI von Camunda*
+
+    o	Damit man von extern Zugriff auf die Camunda Oberfläche hat, soll ein Ingress oder Loadbalancer auf dem Kubernetes-Cluster konfiguriert werden.
+
 
 # Wie habe ich meine Ziele erreicht ?
-
-Damit ich einen Überblick oder einen Leitfaden durch die ganze Semesterarbeit hatte, habe ich mit *Github Project* gearbeitet. Ich hatte ein gutes Projektmanagement und habe mir die Ziele in die Meilensteine eingetragen. So hatte ich immer die Übersicht, welche Ziele noch nicht erreicht wurden und welche noch zu erreichen waren. 
-
-Das Projektmanagement kann hier nochmals eingesehen werden:
-
-[2 Semesterarbeit - BPM (github.com)](https://github.com/users/Bazzako/projects/3/views/4)
