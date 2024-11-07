@@ -37,8 +37,8 @@ aux_links_new_tab: true
 
 # technical site stuff
 url: "https://bazzako.github.io/SemArb4-CD-und-Camunda-BPM"
-logo: "docs/ressources/bilder/ise_ag_team_db.jpg"
-favicon_ico: "docs/ressources/bilder/ise_ag_team_db.jpg"
+logo: "/ressources/bilder/ise_ag_team_db.jpg"
+favicon_ico: "/ressources/bilder/ise_ag_team_db.jpg"
 remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
