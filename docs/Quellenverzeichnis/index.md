@@ -37,13 +37,13 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Lean Six Sigma](https://www.georgiaruralhealth.org/wp-content/uploads/2022/01/lean-6-sigma.png)
 
 ## Sprint
-[Flaticon](https://www.flaticon.com/free-icon/review_4727519?term=sprint&page=1&position=15&origin=search&related_id=4727519)
+[Flaticon](https://www.flaticon.com/free-icon/scrum_5108922?term=sprint&page=1&position=29&origin=search&related_id=5108922)
 
 ## Hauptteil
 [BPM](https://movan.vn/wp-content/uploads/sites/156/2020/05/bpm.png)
 
 ### Define
-[Flaticon](https://www.flaticon.com/free-icon/defining_4129401?term=define&related_id=4129401)
+[Flaticon](https://www.flaticon.com/free-icon/job-description_10165469?term=define&page=1&position=17&origin=search&related_id=10165469)
 
 ### Measure
 [Flaticon](https://www.flaticon.com/free-icon/design-process_10068780?term=measure+process&related_id=10068780)

@@ -11,6 +11,6 @@ Während meiner Semesterarbeit werde ich anhand von Sprints meine Zwischenziele 
 
 Aus den Sprints sind Reflexionen zu entnehmen, wie es mir während des Sprintzyklus ergangen ist und was gut oder schlecht gelaufen ist.
 
-![Scrum Sprint](../../ressources/bilder/rsz_review.png)
+![Scrum Sprint](../ressources/bilder/Sprint_Symbol.png)
 
 [Quelle](../Quellenverzeichnis/index.md#sprint)
