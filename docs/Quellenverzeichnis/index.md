@@ -36,6 +36,9 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 ## Lean-Six-Sigma
 [Lean Six Sigma](https://www.georgiaruralhealth.org/wp-content/uploads/2022/01/lean-6-sigma.png)
 
+## Kubernetes
+[Kubernetes](https://tecbrix.com/wp-content/uploads/2022/05/kubernetes.png)
+
 ## Sprint
 [Flaticon](https://www.flaticon.com/free-icon/scrum_5108922?term=sprint&page=1&position=29&origin=search&related_id=5108922)
 
