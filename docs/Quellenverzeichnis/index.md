@@ -43,7 +43,7 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Flaticon](https://www.flaticon.com/free-icon/scrum_5108922?term=sprint&page=1&position=29&origin=search&related_id=5108922)
 
 ## Hauptteil
-[BPM](https://movan.vn/wp-content/uploads/sites/156/2020/05/bpm.png)
+[BPM](https://www.flaticon.com/free-icon/cloud-database_3715079?term=cloud+server&related_id=3715079)
 
 ### Define
 [Flaticon](https://www.flaticon.com/free-icon/job-description_10165469?term=define&page=1&position=17&origin=search&related_id=10165469)
