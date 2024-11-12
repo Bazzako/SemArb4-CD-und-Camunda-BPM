@@ -49,10 +49,10 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Flaticon](https://www.flaticon.com/free-icon/job-description_10165469?term=define&page=1&position=17&origin=search&related_id=10165469)
 
 ### Measure
-[Flaticon](https://www.flaticon.com/free-icon/design-process_10068780?term=measure+process&related_id=10068780)
+[Flaticon](https://www.flaticon.com/free-icon/design-process_10068822?related_id=10068780&origin=search)
 
 ### Analyze
-[Flaticon](https://www.flaticon.com/free-icon/evaluation_4301684?term=analyze&related_id=4301684)
+[Flaticon](https://www.flaticon.com/free-icon/analysing_10496544?term=analyse&page=1&position=12&origin=tag&related_id=10496544)
 
 ### Improve
 [Flaticon](https://www.flaticon.com/free-icon/improvement_3930474?term=improve&related_id=3930474)
