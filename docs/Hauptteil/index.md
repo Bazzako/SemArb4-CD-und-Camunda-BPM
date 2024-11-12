@@ -9,6 +9,6 @@ nav_order: 3
 
 Im Hauptteil wird alles Relevante für die Praxisarbeit dokumentiert.
 
-![BPMN](../ressources/bilder/cloud-database.png)
+![BPMN](../ressources/bilder/cloud-database.png){: width="250px" }
 
 [Quelle](../Quellenverzeichnis/index.md#hauptteil)
