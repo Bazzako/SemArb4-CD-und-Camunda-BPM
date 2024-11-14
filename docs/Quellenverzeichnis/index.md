@@ -55,10 +55,7 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Flaticon](https://www.flaticon.com/free-icon/analysing_10496544?term=analyse&page=1&position=12&origin=tag&related_id=10496544)
 
 ### Improve
-[Flaticon](https://www.flaticon.com/free-icon/improvement_3930474?term=improve&related_id=3930474)
-
-### Camunda
-[Flaticon](https://logovtor.com/wp-content/uploads/2020/09/camunda-logo-vector.png)
+[Flaticon](https://www.flaticon.com/free-icon/working_9483031?term=improve&related_id=9483031)
 
 ### Control
 [Flaticon](https://www.flaticon.com/free-icon/process_4149678?term=control&related_id=4149678)
