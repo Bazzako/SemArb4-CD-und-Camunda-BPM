@@ -1,0 +1,100 @@
+{
+  "components": [
+    {
+      "label": "DeviceModel",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0txpy99",
+        "columns": null
+      },
+      "id": "Field_1tja9ah",
+      "key": "DeviceModel",
+      "description": "Geräte Model eingeben"
+    },
+    {
+      "label": "Serialnumber",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0jgpkcd",
+        "columns": null
+      },
+      "id": "Field_19iqikl",
+      "key": "Serialnumber",
+      "description": "Seriennummer eingeben",
+      "defaultValue": " "
+    },
+    {
+      "label": "Customer",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1omi58a",
+        "columns": null
+      },
+      "id": "Field_1kvkc2k",
+      "key": "Customer",
+      "description": "Kundenreferenz"
+    },
+    {
+      "label": "Issue",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_09w9vln",
+        "columns": null
+      },
+      "id": "Field_14s7v2w",
+      "key": "Issue",
+      "description": "Defekt beschreiben"
+    },
+    {
+      "label": "Case-ID",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0d22zjp",
+        "columns": null
+      },
+      "id": "Field_1l7paxn",
+      "key": "Case-ID",
+      "description": "Case-ID eingeben"
+    },
+    {
+      "label": "Date",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0sx0622",
+        "columns": null
+      },
+      "id": "Field_0vv5cm9",
+      "key": "Date",
+      "description": "Kaufdatum"
+    },
+    {
+      "label": "Garantiefall ?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0gigwd3",
+        "columns": null
+      },
+      "id": "Field_0nd1xfb",
+      "key": "Warranty"
+    },
+    {
+      "label": "Gerät in der ISE ?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1gjkm70",
+        "columns": null
+      },
+      "id": "Field_018610d",
+      "key": "ISEAG"
+    }
+  ],
+  "type": "default",
+  "id": "Datenerfassung",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.14.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}

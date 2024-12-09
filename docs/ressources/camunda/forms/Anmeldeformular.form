@@ -1,0 +1,26 @@
+{
+  "components": [
+    {
+      "label": "Link Kopieren",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0r32ihh",
+        "columns": null
+      },
+      "id": "Field_06wqd83",
+      "key": "https://iseag.sharepoint.com/:w:/r/intern/Vorlagen/Dokumente/vorlage_email_acer_reparatur.dotx?d=w0f705c459e5841bf9241d4a45a3055ec&csf=1&web=1&e=RWWSpA",
+      "readonly": false,
+      "defaultValue": "https://iseag.sharepoint.com/:w:/r/intern/Vorlagen/Dokumente/vorlage_brief_acer_reparatur.dotx?d=w548afb06c02a4c4581ac9cbf724488be&csf=1&web=1&e=9MXiGc",
+      "disabled": true
+    }
+  ],
+  "type": "default",
+  "id": "Anmeldeformular",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.14.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}
