@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "label": "Gerät defekt?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0x99g24",
+        "columns": null
+      },
+      "id": "Field_1sndfng",
+      "key": "Defekt"
+    }
+  ],
+  "type": "default",
+  "id": "Defektanalyse",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.14.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}

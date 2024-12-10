@@ -1,0 +1,66 @@
+global:
+  ingress:
+    enabled: false
+  prometheus:
+    enabled: false
+
+# Zeebe Broker
+zeebe:
+  enabled: true
+  replicas: 1
+  cpu: "500m"
+  memory: "512Mi"
+  persistence:
+    enabled: false
+  elasticsearch:
+    replicas: 1
+
+# Zeebe Gateway
+zeebe-gateway:
+  enabled: true
+  cpu: "250m"
+  memory: "256Mi"
+
+# Zeebe Elasticsearch (Optional)
+elasticsearch:
+  enabled: false
+
+# Operate (Monitoring UI)
+operate:
+  enabled: true
+  cpu: "250m"
+  memory: "256Mi"
+
+# Tasklist (User Tasks)
+tasklist:
+  enabled: true
+  cpu: "250m"
+  memory: "256Mi"
+
+# Identity (Authentication)
+identity:
+  enabled: true
+  cpu: "250m"
+  memory: "256Mi"
+
+# PostgreSQL Database
+postgresql:
+  enabled: true
+  postgresqlUsername: "camunda"
+  postgresqlPassword: "camunda"
+  postgresqlDatabase: "camunda"
+  resources:
+    requests:
+      memory: "256Mi"
+      cpu: "250m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
+
+# Keycloak (Optional)
+keycloak:
+  enabled: false
+
+# Ingress (Disable for simplicity)
+ingress:
+  enabled: false

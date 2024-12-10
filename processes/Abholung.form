@@ -1,0 +1,33 @@
+{
+  "components": [
+    {
+      "label": "Kunde aus der Region?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1xzd9xn",
+        "columns": null
+      },
+      "id": "Field_0k5x59v",
+      "key": "Region"
+    },
+    {
+      "label": "Wird das Gerät abgeholt?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0yyiy6e",
+        "columns": null
+      },
+      "id": "Field_0d57rdn",
+      "key": "Abholung"
+    }
+  ],
+  "type": "default",
+  "id": "Abholung",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.14.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}

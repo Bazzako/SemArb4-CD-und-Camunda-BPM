@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "label": "Daten auf OneDrive gesichert?",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1jh1mrr",
+        "columns": null
+      },
+      "id": "Field_1y1j2tz",
+      "key": "OneDrive"
+    }
+  ],
+  "type": "default",
+  "id": "Datensicherung",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.14.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}
