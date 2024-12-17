@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Server URL
-SERVER_URL="http://10.0.24.60:30000/engine-rest/deployment/create"
+SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
 
 # Dateien zum Hochladen
 FILES=(
