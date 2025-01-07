@@ -1,0 +1,40 @@
+name: Deploy Camunda Files
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: arc-runner-set  # Name des eigenen Runners
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Deploy Camunda Files
+      run: |
+        #!/bin/bash
+
+        SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
+
+        FILES=(
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesGrundgeruest.bpmn"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesAnmeldeformular.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesDatenerfassung.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesDatensicherung.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesDefektanalyse.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesAbholung.form"
+        )
+
+        for FILE in "${FILES[@]}"
+        do
+            echo "Uploading file: $FILE"
+            curl --location "$SERVER_URL" \
+                --header 'Content-Type: multipart/form-data' \
+                --form "upload=@$FILE"
+            sleep 1
+        done
+
+        echo "All files have been successfully uploaded."

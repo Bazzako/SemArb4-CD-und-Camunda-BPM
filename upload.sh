@@ -5,12 +5,12 @@ SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
 
 # Dateien zum Hochladen
 FILES=(
-    "C:\\Users\\dennis.buathong\\OneDrive\\Dokumente\\Gitrepos\\ITCNE23\\4.Semester\\Semesterarbeit\\SemArb4-CD-und-Camunda-BPM\\processes\\Grundgeruest.bpmn"
-    "C:\\Users\\dennis.buathong\\OneDrive\\Dokumente\\Gitrepos\\ITCNE23\\4.Semester\\Semesterarbeit\\SemArb4-CD-und-Camunda-BPM\\processes\\Anmeldeformular.form"
-    "C:\\Users\\dennis.buathong\\OneDrive\\Dokumente\\Gitrepos\\ITCNE23\\4.Semester\\Semesterarbeit\\SemArb4-CD-und-Camunda-BPM\\processes\\Datenerfassung.form"
-    "C:\\Users\\dennis.buathong\\OneDrive\\Dokumente\\Gitrepos\\ITCNE23\\4.Semester\\Semesterarbeit\\SemArb4-CD-und-Camunda-BPM\\processes\\Datensicherung.form"
-    "C:\\Users\\dennis.buathong\\OneDrive\\Dokumente\\Gitrepos\\ITCNE23\\4.Semester\\Semesterarbeit\\SemArb4-CD-und-Camunda-BPM\\processes\\Defektanalyse.form"
-    "C:\\Users\\dennis.buathong\\OneDrive\\Dokumente\\Gitrepos\\ITCNE23\\4.Semester\\Semesterarbeit\\SemArb4-CD-und-Camunda-BPM\\processes\\Abholung.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesGrundgeruest.bpmn"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesAnmeldeformular.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesDatenerfassung.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesDatensicherung.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesDefektanalyse.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesAbholung.form"
 )
 
 # Iteriere über die Dateien und führe den curl-Befehl einzeln aus
