@@ -1,7 +1,7 @@
 {
   "components": [
     {
-      "label": "DeviceModel Test 1",
+      "label": "DeviceModel Test 0",
       "type": "textfield",
       "layout": {
         "row": "Row_0txpy99",
