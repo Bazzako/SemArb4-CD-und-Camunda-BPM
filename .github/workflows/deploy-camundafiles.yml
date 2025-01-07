@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: arc-runner-set  # Name des eigenen Runners
+    runs-on: arc-runner-set
 
     steps:
     - name: Checkout Repository
