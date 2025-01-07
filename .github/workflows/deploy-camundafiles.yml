@@ -20,8 +20,9 @@ jobs:
             # Camunda Server URL
             SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
 
-            # URLs der .form-Dateien im Git-Repository (Raw-URLs)
+            # URLs der .form- und .bpmn-Dateien im Git-Repository (Raw-URLs)
             FILES=(
+                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Grundgeruest.bpmn"
                 "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Abholung.form"
                 "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Anmeldeformular.form"
                 "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datenerfassung.form"
@@ -34,10 +35,11 @@ jobs:
             do
                 echo "Lade Datei hoch: $URL"
 
-                # Extrahiere den Dateinamen ohne Erweiterung (z. B. Abholung statt Abholung.form)
+                # Extrahiere den Dateinamen ohne die Erweiterung (.form oder .bpmn)
                 FILENAME=$(basename "$URL" .form)
+                FILENAME=${FILENAME%.bpmn}  # Entferne .bpmn, falls die Datei eine .bpmn-Datei ist
 
-                # Herunterladen der Datei und Speichern unter dem Namen ohne die .form-Endung
+                # Herunterladen der Datei und Speichern unter dem Namen ohne die Erweiterung
                 curl -s -o "$FILENAME" "$URL"
 
                 # Datei an Camunda hochladen
@@ -52,6 +54,7 @@ jobs:
             done
 
             echo "Alle Dateien wurden erfolgreich hochgeladen."
+
 
 
 
