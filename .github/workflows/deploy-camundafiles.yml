@@ -22,11 +22,11 @@ jobs:
 
                 # URLs der .form-Dateien im Git-Repository
                 FILES=(
-                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Anmeldeformular.form"
-                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Datenerfassung.form"
-                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Datensicherung.form"
-                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Defektanalyse.form"
-                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Abholung.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Anmeldeformular.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/Datenerfassung.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/Datensicherung.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/Defektanalyse.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/Abholung.form"
                 )
 
                 # Iteriere über die Dateien und führe den curl-Befehl aus
