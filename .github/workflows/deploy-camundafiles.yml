@@ -15,7 +15,7 @@ jobs:
 
     - name: Deploy Camunda Files
       run: |
-            #!/bin/bash
+                #!/bin/bash
 
                 # Camunda Server URL
                 SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
@@ -33,11 +33,20 @@ jobs:
                 for URL in "${FILES[@]}"
                 do
                     echo "Lade Datei hoch: $URL"
+
+                    # Herunterladen der Datei
+                    TEMP_FILE=$(mktemp)
+                    curl -s -o "$TEMP_FILE" "$URL"
+
+                    # Datei an Camunda hochladen
                     curl --location "$SERVER_URL" \
                         --header 'Content-Type: multipart/form-data' \
-                        --form "upload=@<(curl -s $URL)"
+                        --form "upload=@$TEMP_FILE"
+
+                    # Temporäre Datei löschen
+                    rm "$TEMP_FILE"
+
                     sleep 1
                 done
 
                 echo "Alle Dateien wurden erfolgreich hochgeladen."
-
