@@ -20,13 +20,13 @@ jobs:
                 # Camunda Server URL
                 SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
 
-                # URLs der .form-Dateien im Git-Repository
+                # URLs der .form-Dateien im Git-Repository (Raw-URLs)
                 FILES=(
-                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/tree/main/processes/processes/Anmeldeformular.form"
-                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/tree/main/processes/Datenerfassung.form"
-                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/tree/main/processes/Datensicherung.form"
-                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/tree/main/processes/Defektanalyse.form"
-                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/tree/main/processes/Abholung.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Abholung.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Anmeldeformular.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datenerfassung.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datensicherung.form"
+                    "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Defektanalyse.form"
                 )
 
                 # Iteriere über die Dateien und führe den curl-Befehl aus
@@ -50,3 +50,4 @@ jobs:
                 done
 
                 echo "Alle Dateien wurden erfolgreich hochgeladen."
+
