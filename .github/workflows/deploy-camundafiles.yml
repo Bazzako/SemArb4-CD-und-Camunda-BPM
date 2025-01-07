@@ -1,9 +1,9 @@
 name: Deploy Camunda Files
 
 on:
-    push:
-      paths:
-        - 'processes/**'
+  push:
+    paths:
+      - 'processes/**'
 
 jobs:
   deploy:
@@ -15,41 +15,28 @@ jobs:
 
     - name: Deploy Camunda Files
       run: |
-            #!/bin/bash
+        #!/bin/bash
 
-            # Camunda Server URL
-            SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
+        # Camunda Server URL
+        SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
 
-            # URLs der .form- und .bpmn-Dateien im Git-Repository (Raw-URLs)
-            FILES=(
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Grundgeruest.bpmn"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Abholung.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Anmeldeformular.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datenerfassung.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datensicherung.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Defektanalyse.form"
-            )
+        # Durchsuchen des Repositories nach allen Dateien im Verzeichnis "processes"
+        echo "Durchsuche Repository nach Dateien im Verzeichnis 'processes'..."
 
-            # Iteriere über die Dateien und führe den curl-Befehl aus
-            for URL in "${FILES[@]}"
-            do
-                echo "Lade Datei hoch: $URL"
+        # Alle Dateien im "processes"-Verzeichnis herunterladen und hochladen
+        files=$(find processes -type f)
+        for file in $files; do
+          echo "Lade Datei hoch: $file"
 
-                # Extrahiere den Dateinamen (mit der Erweiterung) aus der URL
-                FILENAME=$(basename "$URL")
+          # Raw-URL der Datei erstellen
+          RAW_URL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/$file"
 
-                # Herunterladen der Datei und Speichern unter dem gleichen Namen
-                curl -s -o "$FILENAME" "$URL"
+          # Datei direkt an Camunda hochladen
+          curl --location "$SERVER_URL" \
+            --header 'Content-Type: multipart/form-data' \
+            --form "upload=@$RAW_URL"
+          
+          sleep 1
+        done
 
-                # Datei an Camunda hochladen
-                curl --location "$SERVER_URL" \
-                    --header 'Content-Type: multipart/form-data' \
-                    --form "upload=@$FILENAME"
-
-                # Temporäre Datei löschen
-                rm "$FILENAME"
-
-                sleep 1
-            done
-
-            echo "Alle Dateien wurden erfolgreich hochgeladen."
+        echo "Alle Dateien wurden erfolgreich hochgeladen."
