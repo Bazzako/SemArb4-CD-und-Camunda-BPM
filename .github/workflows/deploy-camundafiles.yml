@@ -17,8 +17,10 @@ jobs:
       run: |
         #!/bin/bash
 
+        # Server URL
         SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
 
+        # Dateien zum Hochladen
         FILES=(
             "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesGrundgeruest.bpmn"
             "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesAnmeldeformular.form"
@@ -28,12 +30,13 @@ jobs:
             "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesAbholung.form"
         )
 
+        # Iteriere über die Dateien und führe den curl-Befehl einzeln aus
         for FILE in "${FILES[@]}"
         do
             echo "Uploading file: $FILE"
             curl --location "$SERVER_URL" \
                 --header 'Content-Type: multipart/form-data' \
-                --form "upload=@$FILE;type=application/octet-stream"
+                --form "upload=@<(curl -s $FILE);filename=$(basename $FILE)"
             sleep 1
         done
 
