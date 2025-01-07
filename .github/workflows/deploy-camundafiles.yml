@@ -35,11 +35,10 @@ jobs:
             do
                 echo "Lade Datei hoch: $URL"
 
-                # Extrahiere den Dateinamen ohne die Erweiterung (.form oder .bpmn)
-                FILENAME=$(basename "$URL" .form)
-                FILENAME=${FILENAME%.bpmn}  # Entferne .bpmn, falls die Datei eine .bpmn-Datei ist
+                # Extrahiere den Dateinamen (mit der Erweiterung) aus der URL
+                FILENAME=$(basename "$URL")
 
-                # Herunterladen der Datei und Speichern unter dem Namen ohne die Erweiterung
+                # Herunterladen der Datei und Speichern unter dem gleichen Namen
                 curl -s -o "$FILENAME" "$URL"
 
                 # Datei an Camunda hochladen
@@ -54,7 +53,3 @@ jobs:
             done
 
             echo "Alle Dateien wurden erfolgreich hochgeladen."
-
-
-
-
