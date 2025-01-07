@@ -17,60 +17,27 @@ jobs:
       run: |
             #!/bin/bash
 
-            # Server URL
-            SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
+                # Camunda Server URL
+                SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
 
-            # Temporärer Ordner zum Speichern der heruntergeladenen Dateien
-            TEMP_DIR="c:/temp/camunda"
+                # URLs der .form-Dateien im Git-Repository
+                FILES=(
+                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Anmeldeformular.form"
+                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Datenerfassung.form"
+                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Datensicherung.form"
+                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Defektanalyse.form"
+                    "https://raw.githubusercontent.com/your-username/your-repo/main/processes/Abholung.form"
+                )
 
-            # Erstelle den temporären Ordner, falls er nicht existiert
-            mkdir -p "$TEMP_DIR"
+                # Iteriere über die Dateien und führe den curl-Befehl aus
+                for URL in "${FILES[@]}"
+                do
+                    echo "Lade Datei hoch: $URL"
+                    curl --location "$SERVER_URL" \
+                        --header 'Content-Type: multipart/form-data' \
+                        --form "upload=@<(curl -s $URL)"
+                    sleep 1
+                done
 
-            # Dateien zum Herunterladen
-            FILES=(
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesGrundgeruest.bpmn"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesAnmeldeformular.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesDatenerfassung.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesDatensicherung.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesDefektanalyse.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processesAbholung.form"
-            )
+                echo "Alle Dateien wurden erfolgreich hochgeladen."
 
-            # Herunterladen der Dateien in den temporären Ordner
-            for FILE in "${FILES[@]}"
-            do
-                BASENAME=$(basename "$FILE")
-                TEMP_FILE="$TEMP_DIR/$BASENAME"
-                
-                echo "Downloading file: $FILE"
-                curl -s -o "$TEMP_FILE" "$FILE"
-                
-                if [ ! -f "$TEMP_FILE" ]; then
-                    echo "Error: Failed to download $FILE"
-                    exit 1
-                fi
-            done
-
-            # Hochladen der heruntergeladenen Dateien
-            for FILE in "${FILES[@]}"
-            do
-                BASENAME=$(basename "$FILE")
-                TEMP_FILE="$TEMP_DIR/$BASENAME"
-                
-                echo "Uploading file: $TEMP_FILE"
-                curl --location "$SERVER_URL" \
-                    --header 'Content-Type: multipart/form-data' \
-                    --form "upload=@$TEMP_FILE"
-                
-                if [ $? -ne 0 ]; then
-                    echo "Error: Failed to upload $TEMP_FILE"
-                    exit 1
-                fi
-                
-                sleep 1
-            done
-
-            # Bereinigen des temporären Ordners
-            rm -r "$TEMP_DIR"
-
-            echo "All files have been successfully uploaded."
