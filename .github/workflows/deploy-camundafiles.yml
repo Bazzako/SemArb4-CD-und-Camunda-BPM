@@ -34,10 +34,10 @@ jobs:
             do
                 echo "Lade Datei hoch: $URL"
 
-                # Extrahiere den Dateinamen aus der URL
-                FILENAME=$(basename "$URL")
+                # Extrahiere den Dateinamen ohne Erweiterung (z. B. Abholung statt Abholung.form)
+                FILENAME=$(basename "$URL" .form)
 
-                # Herunterladen der Datei und Speichern unter dem gleichen Namen
+                # Herunterladen der Datei und Speichern unter dem Namen ohne die .form-Endung
                 curl -s -o "$FILENAME" "$URL"
 
                 # Datei an Camunda hochladen
@@ -52,5 +52,6 @@ jobs:
             done
 
             echo "Alle Dateien wurden erfolgreich hochgeladen."
+
 
 
