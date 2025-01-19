@@ -1,15 +1,13 @@
 name: Deploy Camunda Files
 
 on:
-    push:
-      paths:
-        - 'processes/**'
+  push:
+    paths:
+      - 'processes/**'
 
 jobs:
   deploy:
-    runs-on: arc-runner-set
-    container:  
-        image: mcr.microsoft.com/playwright:v1.49.1
+    runs-on: arc-runner-set  # Use custom runner
 
     steps:
     - name: Checkout Repository
@@ -17,60 +15,53 @@ jobs:
 
     - name: Deploy Camunda Files
       run: |
-            #!/bin/bash
+        #!/bin/bash
+        SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
 
-            # Camunda Server URL
-            SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
+        FILES=(
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Grundgeruest.bpmn"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Abholung.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Anmeldeformular.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datenerfassung.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datensicherung.form"
+            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Defektanalyse.form"
+        )
 
-            # URLs der .form- und .bpmn-Dateien im Git-Repository (Raw-URLs)
-            FILES=(
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Grundgeruest.bpmn"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Abholung.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Anmeldeformular.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datenerfassung.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datensicherung.form"
-                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Defektanalyse.form"
-            )
+        for URL in "${FILES[@]}"
+        do
+            echo "Uploading file: $URL"
+            FILENAME=$(basename "$URL")
+            curl -s -o "$FILENAME" "$URL"
+            curl --location "$SERVER_URL" \
+                --header 'Content-Type: multipart/form-data' \
+                --form "upload=@$FILENAME"
+            rm "$FILENAME"
+            sleep 1
+        done
 
-            # Iteriere über die Dateien und führe den curl-Befehl aus
-            for URL in "${FILES[@]}"
-            do
-                echo "Lade Datei hoch: $URL"
+        echo "All files uploaded successfully."
 
-                # Extrahiere den Dateinamen (mit der Erweiterung) aus der URL
-                FILENAME=$(basename "$URL")
+  test:
+    runs-on: arc-runner-set  # Use custom runner
+    needs: deploy
 
-                # Herunterladen der Datei und Speichern unter dem gleichen Namen
-                curl -s -o "$FILENAME" "$URL"
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
 
-                # Datei an Camunda hochladen
-                curl --location "$SERVER_URL" \
-                    --header 'Content-Type: multipart/form-data' \
-                    --form "upload=@$FILENAME"
-
-                # Temporäre Datei löschen
-                rm "$FILENAME"
-
-                sleep 1
-            done
-
-            echo "Alle Dateien wurden erfolgreich hochgeladen."
-            
     - name: Install dependencies
       run: |
         cd test
         npm install  # Install Node.js dependencies if needed
 
-    
     - name: Run Playwright tests
       run: |
-          npx playwright install
-          npx playwright test
+        npx playwright install
+        npx playwright test
 
-    
     - name: Upload Playwright test results (optional)
       uses: actions/upload-artifact@v3
       if: failure()
       with:
-          name: playwright-results
-          path: playwright-report/
+        name: playwright-results
+        path: playwright-report/
