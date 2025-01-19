@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: arc-runner-set
+    container:  
+        image: mcr.microsoft.com/playwright:v1.49.1
 
     steps:
     - name: Checkout Repository
@@ -53,3 +55,6 @@ jobs:
             done
 
             echo "Alle Dateien wurden erfolgreich hochgeladen."
+
+
+          

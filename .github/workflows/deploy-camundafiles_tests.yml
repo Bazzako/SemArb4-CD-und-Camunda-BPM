@@ -1,13 +1,10 @@
-name: Deploy and Test Camunda
+name: Deploy Camunda Files and Run Selenium Tests
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'processes/**'
-
-  workflow_dispatch:
+    push:
+      paths:
+        - 'processes/**'
+        - 'tests/**'
 
 jobs:
   deploy:
@@ -19,73 +16,65 @@ jobs:
 
     - name: Deploy Camunda Files
       run: |
-        #!/bin/bash
+            #!/bin/bash
 
-        # Camunda Server URL
-        SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
+            # Camunda Server URL
+            SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
 
-        # URLs der .form- und .bpmn-Dateien im Git-Repository (Raw-URLs)
-        FILES=(
-            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Grundgeruest.bpmn"
-            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Abholung.form"
-            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Anmeldeformular.form"
-            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datenerfassung.form"
-            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datensicherung.form"
-            "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Defektanalyse.form"
-        )
+            # URLs der .form- und .bpmn-Dateien im Git-Repository (Raw-URLs)
+            FILES=(
+                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Grundgeruest.bpmn"
+                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Abholung.form"
+                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Anmeldeformular.form"
+                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datenerfassung.form"
+                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Datensicherung.form"
+                "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Defektanalyse.form"
+            )
 
-        # Iteriere über die Dateien und führe den curl-Befehl aus
-        for URL in "${FILES[@]}"
-        do
-            echo "Lade Datei hoch: $URL"
+            for URL in "${FILES[@]}"
+            do
+                echo "Lade Datei hoch: $URL"
 
-            # Extrahiere den Dateinamen (mit der Erweiterung) aus der URL
-            FILENAME=$(basename "$URL")
+                FILENAME=$(basename "$URL")
+                curl -s -o "$FILENAME" "$URL"
 
-            # Herunterladen der Datei und Speichern unter dem gleichen Namen
-            curl -s -o "$FILENAME" "$URL"
+                curl --location "$SERVER_URL" \
+                    --header 'Content-Type: multipart/form-data' \
+                    --form "upload=@$FILENAME"
 
-            # Datei an Camunda hochladen
-            curl --location "$SERVER_URL" \
-                --header 'Content-Type: multipart/form-data' \
-                --form "upload=@$FILENAME"
+                rm "$FILENAME"
+                sleep 1
+            done
 
-            # Temporäre Datei löschen
-            rm "$FILENAME"
+            echo "Alle Dateien wurden erfolgreich hochgeladen."
 
-            sleep 1
-        done
-
-        echo "Alle Dateien wurden erfolgreich hochgeladen."
-
-  integration-tests:
-    needs: deploy
+  test:
     runs-on: arc-runner-set
 
     services:
       selenium:
         image: selenium/standalone-chrome:latest
-        ports: 
+        ports:
           - 4444:4444
-        options: --shm-size="2g"
+        options: >-
+          --shm-size 2g
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Get IP Address
-      run: echo "##[set-output name=ip;]$(ifconfig eth0 | grep 'inet [0-9\.]* ' -o | sed 's/[^0-9\.]//g')"
-      id: ip_addr 
-
-    - name: Setup Python
-      uses: actions/setup-python@v2
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.8'
+        python-version: '3.x'
 
-    - name: Install Python dependencies
+    - name: Install pytest
       run: |
         python -m pip install --upgrade pip
         pip install pytest
 
-    - name: Run Tests
-      run: pytest ./tests
+    - name: Run Selenium Tests
+      env:
+        SELENIUM_URL: http://localhost:4444/wd/hub
+      run: |
+        pytest tests/
