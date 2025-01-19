@@ -43,17 +43,25 @@ jobs:
 
   test:
     runs-on: arc-runner-set  # Use custom runner
-    container: 
-      image: mcr.microsoft.com/playwright:v1.49.1  # Fertiges Image mit Playwright und Dependencies
     needs: deploy
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Run Playwright tests
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
       run: |
         cd tests
+        npm install  # Install Node.js dependencies if needed
+        npx playwright install --with-deps
+
+    - name: Run Playwright tests
+      run: |
         npx playwright test
 
     - name: Upload Playwright test results (optional)
@@ -61,4 +69,4 @@ jobs:
       if: failure()
       with:
         name: playwright-results
-        path: tests/playwright-report/
+        path: playwright-report/
