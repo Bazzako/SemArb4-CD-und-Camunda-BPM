@@ -51,7 +51,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd test
+        cd tests
         npm install  # Install Node.js dependencies if needed
 
     - name: Run Playwright tests
