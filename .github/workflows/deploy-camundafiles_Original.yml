@@ -49,6 +49,14 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
+    - name: Cache Node.js modules
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
@@ -62,6 +70,7 @@ jobs:
 
     - name: Run Playwright tests
       run: |
+        cd tests
         npx playwright test
 
     - name: Upload Playwright test results (optional)
@@ -69,4 +78,4 @@ jobs:
       if: failure()
       with:
         name: playwright-results
-        path: playwright-report/
+        path: tests/playwright-report/
