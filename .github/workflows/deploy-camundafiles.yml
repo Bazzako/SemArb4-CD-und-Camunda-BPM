@@ -55,6 +55,22 @@ jobs:
             done
 
             echo "Alle Dateien wurden erfolgreich hochgeladen."
+            
+    - name: Install dependencies
+      run: |
+        cd test
+        npm install  # Install Node.js dependencies if needed
 
+    
+    - name: Run Playwright tests
+      run: |
+          npx playwright install
+          npx playwright test
 
-          
+    
+    - name: Upload Playwright test results (optional)
+      uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+          name: playwright-results
+          path: playwright-report/
