@@ -1,9 +1,9 @@
 name: Deploy Camunda Files
 
-on:
-  push:
-    paths:
-      - 'processes/**'
+on: workflow_dispatch
+  #push:
+    #paths:
+      #- 'processes/**'
 
 jobs:
   deploy:
