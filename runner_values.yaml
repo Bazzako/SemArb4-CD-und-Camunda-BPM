@@ -1,0 +1,11 @@
+resources:
+  requests:
+    cpu: "500m"  # Adjust based on CPU capacity and requirements
+    memory: "300Mi"  # Slightly above current requests to ensure enough buffer
+  limits:
+    cpu: "1000m"  # 1 CPU core
+    memory: "1Gi"  # Increased limit to prevent potential OOM issues
+
+githubConfigUrl: "https://github.com/Bazzako/SemArb4-CD-und-Camunda-BPM"
+githubConfigSecret:
+  github_token: "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"
