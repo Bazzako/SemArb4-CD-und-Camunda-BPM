@@ -58,7 +58,7 @@ jobs:
       run: |
         cd tests
         npm install  # Install Node.js dependencies if needed
-        npx playwright install
+        npx playwright install --with-deps
 
     - name: Run Playwright tests
       run: |
