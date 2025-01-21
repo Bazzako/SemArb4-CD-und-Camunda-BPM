@@ -36,5 +36,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Ignore Files with Secrets
+# .yaml files
 runner_values.yaml
