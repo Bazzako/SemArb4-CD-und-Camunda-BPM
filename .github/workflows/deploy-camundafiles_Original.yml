@@ -57,8 +57,7 @@ jobs:
     - name: Install dependencies
       run: |
         cd tests
-        # npm install  # Install Node.js dependencies if needed
-        npm ci
+        npm install  # Install Node.js dependencies if needed
         npx playwright install --with-deps
 
     - name: Run Playwright tests
