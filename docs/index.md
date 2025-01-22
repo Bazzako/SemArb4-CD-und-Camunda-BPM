@@ -19,3 +19,7 @@ Ich wünsche dir viel Spass beim Lesen!
 ![Welcome](/ressources/bilder/welcome-back.png){: width="250px" }
 
 [Quelle](/Quellenverzeichnis/index.md#startseite)
+
+**Disclaimer**
+
+Passwörter und Secrets könnten in der Dokumentation enthalten sein. Dies ist beabsichtigt und würde in einer Produktionsumgebung nicht so umgesetzt werden. Nach Abschluss der Semesterarbeit wird die Umgebung abgebaut, wodurch diese Informationen nicht mehr von Bedeutung sind.
