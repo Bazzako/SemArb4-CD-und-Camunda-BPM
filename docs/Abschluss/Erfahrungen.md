@@ -29,7 +29,10 @@ Ursprünglich war geplant die gesammte Camunda Umgebung mit einem existierenden 
 
 Probleme mit Personal Access Token (Classic) -> Falscher Token ausgewählt -> Fine-grained tokens wurde gewählt...
 
+## Storageclass
 
+
+## Ingress
 
 # Lessions Learned
 
