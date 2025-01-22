@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Anmeldeformular', async ({ page }) => {
-  await page.goto('http://10.0.24.77:30000/camunda/app/welcome/default/#!/login');
+  await page.goto('http://cloud-hf-14-w1:30000/camunda/app/welcome/default/#!/login');
   await page.getByPlaceholder('Username').fill('demo');
   await page.getByPlaceholder('Username').press('Tab');
   await page.getByPlaceholder('Password').fill('demo');
