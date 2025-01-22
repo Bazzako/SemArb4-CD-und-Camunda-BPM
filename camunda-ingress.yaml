@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: ingress-nginx   # Ingress-Klasse hinzufügen
   rules:
-  - host: camunda.local
+  - host: cloud-hf-14.maas
     http:
       paths:
       - path: /
@@ -17,4 +17,4 @@ spec:
           service:
             name: camunda-service
             port:
-              number: 8080
+              number: 30000
