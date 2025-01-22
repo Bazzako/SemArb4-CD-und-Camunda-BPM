@@ -63,6 +63,7 @@ jobs:
         ls -la
         npm ci
         echo "npx wird installiert"
+        sleep 100000
         npx playwright install --with-deps
 
 
