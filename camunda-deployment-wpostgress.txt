@@ -23,23 +23,24 @@ spec:
         - name: JAVA_OPTS
           value: "-Dcamunda.bpm.admin-user=admin -Dcamunda.bpm.admin-password=admin"
         - name: DB_DRIVER
-          value: org.postgresql.Driver
+          value: "org.postgresql.Driver"
         - name: DB_URL
-          value: jdbc:postgresql://<POSTGRES_HOST>:<POSTGRES_PORT>/<POSTGRES_DB>
+          value: "jdbc:postgresql://postgres:5432/camundadb"
         - name: DB_USERNAME
-          value: <POSTGRES_USER>
+          value: "camunda"
         - name: DB_PASSWORD
-          value: <POSTGRES_PASSWORD>
+          value: "secretpassword"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: camunda-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: camunda
   ports:
   - protocol: TCP
     port: 8080
     targetPort: 8080
+    ClusterIP: 30000

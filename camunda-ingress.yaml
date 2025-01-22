@@ -6,9 +6,9 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx   # Ingress-Klasse hinzufügen
+  ingressClassName: ingress-nginx   # Ingress-Klasse hinzufügen
   rules:
-  - host: cloud-hf-06-w1.maas
+  - host: camunda.local
     http:
       paths:
       - path: /
@@ -17,4 +17,4 @@ spec:
           service:
             name: camunda-service
             port:
-              number: 80
+              number: 8080

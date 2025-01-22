@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: camunda-deployment
+  namespace: default
   labels:
     app: camunda
 spec:
@@ -35,6 +36,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: camunda-service
+  namespace: default
 spec:
   type: NodePort
   selector:
