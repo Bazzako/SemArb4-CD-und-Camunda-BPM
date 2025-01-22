@@ -20,7 +20,7 @@ resource "maas_vm_instance" "k8s_controller_init" {
   zone      = "10-3-24-0"
   user_data = file("${path.module}/cloud_init_k0s.yaml")
 
-  depends_on = [ maas_vm_instance.k8s_controller, maas_vm_instance.k8s_worker ]
+  depends_on = [ maas_vm_instance.k8s_worker ]
 }
 
 # k0s worker instances

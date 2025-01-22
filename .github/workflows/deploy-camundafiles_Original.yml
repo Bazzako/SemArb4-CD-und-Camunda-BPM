@@ -16,7 +16,7 @@ jobs:
     - name: Deploy Camunda Files
       run: |
         #!/bin/bash
-        SERVER_URL="http://10.0.24.77:30000/engine-rest/deployment/create"
+        SERVER_URL="http://10.0.24.89:30000/engine-rest/deployment/create"
 
         FILES=(
             "https://raw.githubusercontent.com/Bazzako/SemArb4-CD-und-Camunda-BPM/main/processes/Grundgeruest.bpmn"
