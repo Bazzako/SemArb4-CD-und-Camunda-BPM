@@ -56,14 +56,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pwd
         cd tests
-        mkdir test_pipeline
-        touch test.txt
-        ls -la
-        npm ci
+        npm install
         echo "npx wird installiert"
-        sleep 100000
         npx playwright install --with-deps
 
 
