@@ -29,7 +29,7 @@ Ursprünglich war geplant die gesammte Camunda Umgebung mit einem existierenden 
 
 ## Runner
 
-Probleme mit Personal Access Token (Classic) -> Falscher Token ausgewählt -> Fine-grained tokens wurde gewählt...
+Damit der Arc-Runner auf meine Kubernetes funktioniert, muss bei dem Deployment ein Github *Personal Access Token* mitgegeben werden. Ich habe dazu folgenden Anleitung befolgt [Link](https://raw.githubusercontent.com/pstark-code/kubernetes-homelab/refs/heads/main/04-neuer-cluster/resourcen/ingress-controller-with-hostnetwork.yaml). Nach dem erstellen des *Personal Access Token* und dem Deployen des Runners, kam der "Listener" Pod nie hoch. Ich habe dann einige Zeit gebraucht bis ich herausgefunden habe, dass ich einen falschen Token erstellt habe (Fine-grained token). Nach dem erstellen des richtigen Token (*Personal access tokens (classic)*) und dem erneuten Deploy des Runners wurde der "Listener" Pod schlussendlich erstellt und hat sich die Pipeline aufgabe geholt.
 
 ## Testing
 
