@@ -38,8 +38,39 @@ Das erstellen der neuen Umgebung mit mehr Ressourcen war jedoch nicht ganz alles
 
 ## Ingress
 
-Ich hatte anfangs Mühe zu verstehen wie ich 
-Der Ingress Controler (Nginx) und das Deployment hatte ich relativ schnell zusammen. Jedoch funktionierte sie nicht.
+Ich hatte anfangs Mühe zu verstehen wie Ingress in meinem Projekt funktionieren soll. Nach einem Gespräch mit dem Fachexperten Philipp Stark konnte ich meine Verwirrung immer mehr ablegen.
+Der Ingress Controler (Nginx) und das Deployment hatte ich relativ schnell zusammen. Jedoch funktionierte sie nicht. Ich habe mit Philipp Stark dann das Debuging begonnen. Nach dem ausführen von "kubectl get ingressclasses" haben wir folgendes erhalten:
+```
+$ kubectl get ingressclasses
+NAME    CONTROLLER             PARAMETERS   AGE
+nginx   k8s.io/ingress-nginx   <none>       47h
+```
+
+In meinem Ingress Deployment hatte ich aber folgendes konfiguriert:
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: camunda-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: ingress-nginx
+  rules:
+  - host: cloud-hf-14-w1.maas        
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: camunda-service   
+            port:
+              number: 8080          
+
+```
+Der **ingressClassName** hat nicht gestummen. Nach der Anpassung hat dann alles sauber funktioniert. Der Grund warum ich über den Port *30642* auf den Camunda-Service zugreifen muss ist, weil ich bei der Ingres Controller installion die Anpassung für den Nodeport nicht gemacht habe. Philipp Stark hat mich darauf hingewiesen.
 
 # Lessions Learned
 
