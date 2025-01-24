@@ -10,7 +10,7 @@ nav_order: 4
 In diesem Kapitel werde ich meine Semesterarbeit reflektieren.
 
 
-![Erfahrungen](../../ressources/bilder/rsz_experience.png)
+![Erfahrungen](../ressources/bilder/verification.png){: width="250px" }
 
 [Quelle](../Quellenverzeichnis/index.md#erfahrungen)
 
@@ -38,7 +38,8 @@ Das erstellen der neuen Umgebung mit mehr Ressourcen war jedoch nicht ganz alles
 
 ## Ingress
 
-Probleme mit Port (30642) und ingressClassName: nginx -> war ingress-nginx
+Ich hatte anfangs Mühe zu verstehen wie ich 
+Der Ingress Controler (Nginx) und das Deployment hatte ich relativ schnell zusammen. Jedoch funktionierte sie nicht.
 
 # Lessions Learned
 

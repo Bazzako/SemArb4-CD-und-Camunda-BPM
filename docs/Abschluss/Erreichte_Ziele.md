@@ -8,7 +8,7 @@ nav_order: 3
 # Wurden alle Ziele erreicht ?
 
 
-![Pokal](../../ressources/bilder/rsz_trophy.png)
+![Pokal](../../ressources/bilder/rsz_trophy.png){: width="250px" }
 
 [Quelle](../Quellenverzeichnis/index.md#erreichte-ziele)
 
