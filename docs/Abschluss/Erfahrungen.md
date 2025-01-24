@@ -31,11 +31,17 @@ Ursprünglich war geplant die gesammte Camunda Umgebung mit einem existierenden 
 
 Probleme mit Personal Access Token (Classic) -> Falscher Token ausgewählt -> Fine-grained tokens wurde gewählt...
 
+## Testing
+
+Probleme mit dependecie Installation -> Neubauen des Clusters mit mehr resourcen
+
 ## Storageclass
+
 
 
 ## Ingress
 
+Probleme mit Port (30642) und ingressClassName: nginx -> war ingress-nginx
 
 # Lessions Learned
 
