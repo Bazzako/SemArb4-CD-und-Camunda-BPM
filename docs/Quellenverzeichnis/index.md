@@ -58,7 +58,7 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Flaticon](https://www.flaticon.com/free-icon/working_9483031?term=improve&related_id=9483031)
 
 ### Control
-[Flaticon](https://www.flaticon.com/free-icon/process_4149678?term=control&related_id=4149678)
+[Flaticon](https://www.flaticon.com/free-icon/efficacy_9660517?term=efficacy&page=1&position=70&origin=search&related_id=9660517)
 
 ## Quellenverzeichnis-Logo
 [Flaticon](https://www.flaticon.com/free-icon/loupe_751381?term=loupe&related_id=751381)
@@ -67,7 +67,7 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Flaticon](https://www.flaticon.com/free-icon/check_11510892?term=check&page=1&position=93&origin=search&related_id=11510892)
 
 ### Erreichte-Ziele
-[Flaticon](https://www.flaticon.com/free-icon/trophy_2617955?term=achieved&page=1&position=66&origin=search&related_id=2617955)
+[Flaticon](https://www.flaticon.com/free-icon/verification_9948779?term=validation&page=1&position=8&origin=search&related_id=9948779)
 
 ### Erfahrungen
 [Flaticon](https://www.flaticon.com/free-icon/experience_9750936?term=experience&related_id=9750936)
@@ -84,3 +84,5 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Anleitung für Runner](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/quickstart-for-actions-runner-controller#legal-notice)
 ## ChatGPT
 [ChatGPT](https://chat.openai.com/)
+## Philipp Stark Repository
+[GithubRepo](https://github.com/pstark-code/kubernetes-homelab)
