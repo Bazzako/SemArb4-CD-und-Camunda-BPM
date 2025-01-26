@@ -64,13 +64,13 @@ Im Quellenverzeichnis findet man die Quellen der genutzten Bilder und Quellen de
 [Flaticon](https://www.flaticon.com/free-icon/loupe_751381?term=loupe&related_id=751381)
 
 ## Abschluss
-[Flaticon](https://www.flaticon.com/free-icon/check_11510892?term=check&page=1&position=93&origin=search&related_id=11510892)
+[Flaticon](https://www.flaticon.com/free-icon/goal_987397?term=finish&page=1&position=10&origin=search&related_id=987397)
 
 ### Erreichte-Ziele
-[Flaticon](https://www.flaticon.com/free-icon/verification_9948779?term=validation&page=1&position=8&origin=search&related_id=9948779)
+[Flaticon](https://www.flaticon.com/free-icon/success_8910882?term=achieve&related_id=8910882)
 
 ### Erfahrungen
-[Flaticon](https://www.flaticon.com/free-icon/experience_9750936?term=experience&related_id=9750936)
+[Flaticon](https://www.flaticon.com/free-icon/verification_9948779?term=verification&page=1&position=53&origin=search&related_id=9948779)
 
 # Hilfsmittel
 
