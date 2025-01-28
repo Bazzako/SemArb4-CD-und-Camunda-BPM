@@ -14,7 +14,7 @@ test('Datenerfassung', async ({ page }) => {
   await page.getByRole('heading', { name: 'All Tasks' }).click();
   await page.locator('li').filter({ hasText: 'Gerätedaten erfassen Garantiefallprozess Created a few seconds ago' }).getByRole('link').click();
   await page.getByRole('button', { name: 'Claim' }).click();
-  await page.getByLabel('DeviceModel Test').click();
-  await page.getByLabel('DeviceModel Test').fill('Test1');
+  await page.getByLabel('DeviceModel').click();
+  await page.getByLabel('DeviceModel').fill('Playwright Test');
   await page.getByRole('button', { name: 'Complete' }).click();
 });
