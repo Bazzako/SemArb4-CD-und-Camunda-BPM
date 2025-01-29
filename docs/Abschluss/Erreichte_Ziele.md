@@ -41,4 +41,4 @@ Um zu rekapitulieren, welche Ziele zu erreichen waren, werde ich diese hier noch
 
 # Feedback
 
-Ich musste einige Ziele während der Arbeit etwas anpassen, da die Umsetzung teilweise keinen Sinn machte oder wie sie definiert waren nicht umsetzbar waren.
+Ich musste einige Ziele während der Arbeit etwas anpassen, da die Umsetzung teilweise keinen Sinn machte oder wie sie definiert waren nicht umsetzbar waren. Diese Ziele konnten aber alle erreicht werden.
